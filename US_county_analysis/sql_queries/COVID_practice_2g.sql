@@ -3,7 +3,7 @@
 SELECT x.County_ County,
 	   CAST(x.Total_COVID_Deaths/x.County_pop*10000 AS decimal(7,2)) AS COVID_Deaths_Per_10K,
 	   x.NCHS_Code Rurality_Score
-  FROM 
+  FROM
 	   (
 		SELECT A.County_name + '_' + A.State County_,
 		       CAST(ISNULL(A.Deaths_involving_COVID_19,0) AS float) AS Total_COVID_Deaths,
